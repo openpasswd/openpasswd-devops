@@ -9,6 +9,8 @@ services:
     image: ricardoalcantara/openpasswd-portal:latest
   console:
     image: ricardoalcantara/openpasswd-console:latest
+    environment:
+      - OPENPASSWD_SERVER=//api.openpasswd.com
   api:
     image: ricardoalcantara/openpasswd-server:latest
     depends_on:
