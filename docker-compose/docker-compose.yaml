@@ -21,5 +21,11 @@ services:
     image: postgres:14
     env_file:
       - postgres/.env
-      
-      
+  redis:
+    image: redis:7-alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+            
